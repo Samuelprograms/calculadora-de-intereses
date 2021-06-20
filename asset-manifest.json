@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/calculadora-de-intereses/static/css/main.53789fa9.chunk.css",
-    "main.js": "/calculadora-de-intereses/static/js/main.61437ad6.chunk.js",
-    "main.js.map": "/calculadora-de-intereses/static/js/main.61437ad6.chunk.js.map",
+    "main.js": "/calculadora-de-intereses/static/js/main.a631d601.chunk.js",
+    "main.js.map": "/calculadora-de-intereses/static/js/main.a631d601.chunk.js.map",
     "runtime-main.js": "/calculadora-de-intereses/static/js/runtime-main.20df50ab.js",
     "runtime-main.js.map": "/calculadora-de-intereses/static/js/runtime-main.20df50ab.js.map",
     "static/js/2.2abd3321.chunk.js": "/calculadora-de-intereses/static/js/2.2abd3321.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.20df50ab.js",
     "static/js/2.2abd3321.chunk.js",
     "static/css/main.53789fa9.chunk.css",
-    "static/js/main.61437ad6.chunk.js"
+    "static/js/main.a631d601.chunk.js"
   ]
 }
