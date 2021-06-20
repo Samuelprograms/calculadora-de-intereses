@@ -20,9 +20,9 @@ function App() {
     e.preventDefault();
     let mensuales = [];
     if (
-      parseInt(data.cuotas) <= 0 ||
-      parseInt(data.interes) <= 0 ||
-      parseInt(data.valor) <= 0
+      parseFloat(data.cuotas) <= 0 ||
+      parseFloat(data.interes) <= 0 ||
+      parseFloat(data.valor) <= 0
     ) {
       setError({
         ...error,
@@ -34,19 +34,19 @@ function App() {
       for (let index = 1; index < parseInt(data.cuotas) + 1; index++) {
         mensuales.push({
           mes: index,
-          valorDeCuota: (parseInt(data.valor) / parseInt(data.cuotas)).toFixed(
-            2
-          ),
+          valorDeCuota: (
+            parseFloat(data.valor) / parseInt(data.cuotas)
+          ).toFixed(2),
           valorDeInteres: (
-            parseInt(data.valor) *
+            parseFloat(data.valor) *
             parseInt(data.cuotas) *
-            (parseInt(data.interes) / 1200)
+            (parseFloat(data.interes) / 1200)
           ).toFixed(2),
           valorTotal: (
-            parseInt(data.valor) / parseInt(data.cuotas) +
-            parseInt(data.valor) *
+            parseFloat(data.valor) / parseInt(data.cuotas) +
+            parseFloat(data.valor) *
               parseInt(data.cuotas) *
-              (parseInt(data.interes) / 1200)
+              (parseFloat(data.interes) / 1200)
           ).toFixed(2),
         });
         setResults(mensuales);
@@ -59,19 +59,19 @@ function App() {
       <Inputs>
         <Input
           name="valor"
-          placeholder="Valor del credito"
+          placeholder="Valor del crédito (pesos)"
           type="number"
           onChange={(e) => handleOnChange(e)}
         />
         <Input
           name="cuotas"
-          placeholder="Numero de cuotas"
+          placeholder="Número de cuotas (#)"
           type="number"
           onChange={(e) => handleOnChange(e)}
         />
         <Input
           name="interes"
-          placeholder="Tasa de interés"
+          placeholder="Tasa de interés (%)"
           type="number"
           onChange={(e) => handleOnChange(e)}
         />
@@ -89,9 +89,9 @@ function App() {
           {results.map((result, index) => (
             <Row key={index}>
               <p>{result.mes}</p>
-              <p>{result.valorDeCuota}</p>
-              <p>{result.valorDeInteres}</p>
-              <p>{result.valorTotal}</p>
+              <p>{result.valorDeCuota} pesos</p>
+              <p>{result.valorDeInteres} pesos</p>
+              <p>{result.valorTotal} pesos</p>
             </Row>
           ))}
         </Table>
@@ -148,6 +148,7 @@ const Inputs = styled.div`
 `;
 const Input = styled.input`
   padding: 10px 20px;
+  width: 500px;
   margin-top: 10px;
   font-size: 20px;
   outline: none;
